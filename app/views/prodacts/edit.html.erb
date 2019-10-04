@@ -1,0 +1,22 @@
+<h1>Editing prodact</h1>
+
+<%= form_with(model: @prodact, local: true) do |form| %>
+<p>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+</p>
+<p>
+  <%= form.label :number %><br>
+  <%= form.text_field :number %>
+</p>
+<p>
+  <%= form.label :group %><br>
+  <%= form.text_field :group %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+<% end %>
+
+<%= link_to 'Back', prodacts_path %>

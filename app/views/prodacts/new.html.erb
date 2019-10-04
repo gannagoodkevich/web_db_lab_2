@@ -1,0 +1,18 @@
+<%= form_with scope: :prodact, url: prodacts_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+  </p>
+  <p>
+    <%= form.label :group %><br>
+    <%= form.text_field :group %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

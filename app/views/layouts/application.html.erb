@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <nav class="navbar navbar-inverse">
+   <ul class="nav navbar-nav">
+     <li><a href="prodacts">>Prodacts</a></li>
+     <li><a href="prodacts/new">Link</a></li>
+   </ul>
+  </nav>
+  </head>
+<div class="container">
+  <body>
+    <%= yield %>
+  </body>
+</div>
+</html>

@@ -1,0 +1,18 @@
+<p>
+  <strong>Name:</strong>
+  <%= @prodact.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @prodact.number %>
+</p>
+
+<p>
+  <strong>Group</strong>
+  <%= @prodact.group%>
+</p>
+
+<%= link_to 'Edit', edit_prodact_path(@prodact)%> |
+
+<%= link_to 'To the list', prodacts_path%> 
