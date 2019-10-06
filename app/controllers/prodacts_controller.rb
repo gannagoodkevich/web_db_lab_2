@@ -33,4 +33,23 @@ class ProdactsController < ApplicationController
       render 'edit'
     end
   end
+
+  def search_by_name
+    render plain: params.inspect
+    @parameter = params[:search]
+    @results = Prodact.all.where("name LIKE :search", search: '%' + @parameter + '%')
+  end
+
+  def search_by_group
+    #render plain: params.inspect Why I can't find by group?!
+    @parameter = params[:search]
+    @results = Prodact.all.where("number LIKE :search", search: '%' + @parameter + '%')
+  end
+
+  def destroy
+    @prodact = Prodact.find(params[:id])
+    @prodact.destroy
+
+    redirect_to prodacts_path
+  end
 end

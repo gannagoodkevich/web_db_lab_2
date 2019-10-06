@@ -2,11 +2,32 @@
 
 <h1>Listing prodacts</h1>
 
+<div> Search by name </div>
+  <%= form_tag(search_by_name_prodacts_path_url, :method => "get",
+      class: 'navbar-form navbar-right') do %>
+      <div class="input-group">
+        <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+      <% end %>
+<div> Search by group </div>
+      <%= form_tag(search_by_group_prodacts_path_url, :method => "get",
+          class: 'navbar-form navbar-right') do %>
+          <div class="input-group">
+            <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+            <div class="input-group-btn">
+              <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+            </div>
+          </div>
+          <% end %>
 <table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Number</th>
     <th>Group</th>
+    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -16,8 +37,12 @@
       <td><%= prodact.name %></td>
       <td><%= prodact.number %></td>
       <td><%= prodact.group %></td>
-      <td><%= link_to 'show', prodact_path(prodact) %></td>
+      <td><%= link_to 'Show', prodact_path(prodact) %></td>
       <td><%= link_to 'Edit', edit_prodact_path(prodact) %></td>
+      <td><%= link_to 'Delete', prodact_path(prodact),
+              method: :delete,
+              data: {confirm: 'Are you shure?'} %></td>
+
     </tr>
   <% end %>
 </table>
