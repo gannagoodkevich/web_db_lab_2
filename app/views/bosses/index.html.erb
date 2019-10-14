@@ -1,0 +1,28 @@
+<h1>Listing bosses</h1>
+
+<%= link_to 'Add new', new_boss_path%>
+
+<table class="table table-striped">
+  <tr>
+    <th>Enterprise</th>
+    <th>Full name</th>
+    <th>job</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @bosses.each do |boss| %>
+    <tr>
+      <td><%= boss.enterprise_name %></td>
+      <td><%= boss.full_name %></td>
+      <td><%= boss.job %></td>
+      <td><%= link_to 'Show', boss_path(boss) %></td>
+      <td><%= link_to 'Edit', edit_boss_path(boss) %></td>
+      <td><%= link_to 'Delete', boss_path(boss),
+              method: :delete,
+              data: {confirm: 'Are you shure?'} %></td>
+
+    </tr>
+  <% end %>
+</table>

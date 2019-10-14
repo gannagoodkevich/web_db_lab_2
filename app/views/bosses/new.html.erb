@@ -1,0 +1,19 @@
+<%= form_with scope: :boss, url: bosses_path, local: true do |form| %>
+  <p>
+    <%= form.label :enterprise_name %><br>
+    <%= form.text_field :enterprise_name %>
+  </p>
+
+  <p>
+    <%= form.label :full_name %><br>
+    <%= form.text_field :full_name %>
+  </p>
+  <p>
+    <%= form.label :job %><br>
+    <%= form.text_field :job %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

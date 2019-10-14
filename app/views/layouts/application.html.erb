@@ -9,8 +9,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <nav class="navbar navbar-inverse">
    <ul class="nav navbar-nav">
-     <li><a href="prodacts">>Prodacts</a></li>
-     <li><a href="prodacts/new">Link</a></li>
+     <li><%= link_to 'Prodacts', prodacts_path%></li>
+     <li><%= link_to 'Enterprises', enterprises_path%></li>
+     <li><%= link_to 'List of prices', lists_path%></li>
+     <li><%= link_to 'List of bosses', bosses_path%></li>
    </ul>
   </nav>
   </head>

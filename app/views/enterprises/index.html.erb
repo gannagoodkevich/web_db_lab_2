@@ -1,0 +1,30 @@
+<h1>Listing enterprises</h1>
+
+<%= link_to 'Add new', new_enterprise_path%>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @enterprises.each do |enterprise| %>
+    <tr>
+      <td><%= enterprise.name_ent %></td>
+      <td><%= enterprise.code %></td>
+      <td><%= enterprise.address %></td>
+      <td><%= enterprise.phone %></td>
+      <td><%= link_to 'Show', enterprise_path(enterprise) %></td>
+      <td><%= link_to 'Edit', edit_enterprise_path(enterprise) %></td>
+      <td><%= link_to 'Delete', enterprise_path(enterprise),
+              method: :delete,
+              data: {confirm: 'Are you shure?'} %></td>
+
+    </tr>
+  <% end %>
+</table>

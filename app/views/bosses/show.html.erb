@@ -1,0 +1,18 @@
+<p>
+  <strong>Enterprise:</strong>
+  <%= @boss.enterprise_name %>
+</p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @boss.full_name %>
+</p>
+
+<p>
+  <strong>Job</strong>
+  <%= @boss.job%>
+</p>
+
+<%= link_to 'Edit', edit_boss_path(@boss)%> |
+
+<%= link_to 'To the list', bosses_path%>

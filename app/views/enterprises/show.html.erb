@@ -1,0 +1,23 @@
+<p>
+  <strong>Name:</strong>
+  <%= @enterprise.name_ent %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @enterprise.code %>
+</p>
+
+<p>
+  <strong>Address</strong>
+  <%= @enterprise.address%>
+</p>
+
+<p>
+  <strong>Phone</strong>
+  <%= @enterprise.phone%>
+</p>
+
+<%= link_to 'Edit', edit_enterprise_path(@enterprise)%> |
+
+<%= link_to 'To the list', enterprises_path%>

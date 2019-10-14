@@ -1,0 +1,18 @@
+<%= form_with scope: :list, url: lists_path, local: true do |form| %>
+  <p>
+    <%= form.label :name_prodact %><br>
+    <%= form.text_field :name_prodact %>
+  </p>
+  <p>
+    <%= form.label :name_enterprise %><br>
+    <%= form.text_field :name_enterprise %>
+  </p>
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

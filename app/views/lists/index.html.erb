@@ -1,0 +1,28 @@
+<h1>Listing prices of prodacts</h1>
+
+<%= link_to 'Add new', new_list_path%>
+
+<table class="table table-striped">
+  <tr>
+    <th>Prodact</th>
+    <th>Enterprise</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @lists.each do |list| %>
+    <tr>
+      <td><%= list.name_prodact %></td>
+      <td><%= list.name_enterprise %></td>
+      <td><%= list.price %></td>
+      <td><%= link_to 'Show', list_path(list) %></td>
+      <td><%= link_to 'Edit', edit_list_path(list) %></td>
+      <td><%= link_to 'Delete', list_path(list),
+              method: :delete,
+              data: {confirm: 'Are you shure?'} %></td>
+
+    </tr>
+  <% end %>
+</table>
