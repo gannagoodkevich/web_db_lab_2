@@ -18,6 +18,38 @@
   <%= @enterprise.phone%>
 </p>
 
+<p>
+  <strong>List of prodacts</strong>
+</p>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Group</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @lists.each do |list| %>
+    <% if list.enterprise.name_ent.eql?(@enterprise.name_ent) %>
+
+      <tr>
+        <td><%= list.prodact.name %></td>
+        <td><%= list.prodact.number %></td>
+        <td><%= list.prodact.group %></td>
+        <td><%= link_to 'Show', prodact_path(list.prodact) %></td>
+        <td><%= link_to 'Edit', edit_prodact_path(list.prodact) %></td>
+        <td><%= link_to 'Delete', prodact_path(list.prodact),
+                method: :delete,
+                data: {confirm: 'Are you shure?'} %></td>
+
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
 <%= link_to 'Edit', edit_enterprise_path(@enterprise)%> |
 
 <%= link_to 'To the list', enterprises_path%>

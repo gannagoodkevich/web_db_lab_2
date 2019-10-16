@@ -16,7 +16,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(params.require(:list).permit(:name_prodact, :name_enterprise, :price))
+    @list = List.new(params.require(:list).permit(:prodact_id, :enterprise_id, :price))
     if @list.save
       redirect_to @list
     else
@@ -27,7 +27,7 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
 
-    if @list.update(params.require(:list).permit(:name_prodact, :name_enterprise, :price))
+    if @list.update(params.require(:list).permit(:prodact_id, :enterprise_id, :price))
       redirect_to @list
     else
       render 'edit'

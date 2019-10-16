@@ -1,10 +1,12 @@
 class ProdactsController < ApplicationController
   def index
     @prodacts = Prodact.all
+    @enterprises = Enterprise.all
   end
 
   def show
     @prodact = Prodact.find(params[:id])
+    @lists = List.all
   end
 
   def new
@@ -32,6 +34,11 @@ class ProdactsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def choose_enterprise
+    render plain: params.inspect
+    #@prodacts = Prodact.find(params[:enterprise_id])
   end
 
   def search_by_name

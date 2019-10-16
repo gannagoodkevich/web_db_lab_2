@@ -2,8 +2,7 @@
 
 <%= form_with(model: @boss, local: true) do |form| %>
 <p>
-  <%= form.label :enterprise_name %><br>
-  <%= form.text_field :enterprise_name %>
+  <%= form.collection_select( :enterprise_id, Enterprise.all, :id, :name_ent) %>
 </p>
 
 <p>

@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_10_14_163050) do
 
   create_table "bosses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "enterprise_name"
+    t.integer "enterprise_id"
     t.string "full_name"
     t.string "job"
     t.datetime "created_at", precision: 6, null: false
@@ -25,13 +25,15 @@ ActiveRecord::Schema.define(version: 2019_10_14_163050) do
     t.string "code"
     t.string "address"
     t.string "phone"
+    t.integer "prodact_id"
+    t.integer "boss_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "name_prodact"
-    t.string "name_enterprise"
+    t.integer "prodact_id"
+    t.integer "enterprise_id"
     t.string "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_163050) do
     t.string "name"
     t.string "number"
     t.string "group"
+    t.integer "enterprise_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

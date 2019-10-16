@@ -13,6 +13,36 @@
   <%= @prodact.group%>
 </p>
 
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @lists.each do |list| %>
+    <% if list.prodact.name.eql?(@prodact.name) %>
+
+      <tr>
+        <td><%= list.enterprise.name_ent %></td>
+        <td><%= list.enterprise.code %></td>
+        <td><%= list.enterprise.address %></td>
+        <td><%= list.enterprise.phone %></td>
+        <td><%= link_to 'Show', enterprise_path(list.enterprise) %></td>
+        <td><%= link_to 'Edit', edit_enterprise_path(list.enterprise) %></td>
+        <td><%= link_to 'Delete', enterprise_path(list.enterprise),
+                method: :delete,
+                data: {confirm: 'Are you shure?'} %></td>
+
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
 <%= link_to 'Edit', edit_prodact_path(@prodact)%> |
 
-<%= link_to 'To the list', prodacts_path%> 
+<%= link_to 'To the list', prodacts_path%>

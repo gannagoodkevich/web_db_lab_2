@@ -2,13 +2,10 @@
 
 <%= form_with(model: @list, local: true) do |form| %>
 <p>
-  <%= form.label :name_prodact %><br>
-  <%= form.text_field :name_prodact %>
+  <%= form.collection_select( :prodact_id, Prodact.all, :id, :name) %>
 </p>
-
 <p>
-  <%= form.label :name_enterprise %><br>
-  <%= form.text_field :name_enterprise %>
+  <%= form.collection_select( :enterprise_id, Enterprise.all, :id, :name_ent) %>
 </p>
 
 <p>

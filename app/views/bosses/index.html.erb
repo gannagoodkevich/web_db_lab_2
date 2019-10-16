@@ -14,7 +14,7 @@
 
   <% @bosses.each do |boss| %>
     <tr>
-      <td><%= boss.enterprise_name %></td>
+      <td><%= boss.enterprise.name_ent %></td>
       <td><%= boss.full_name %></td>
       <td><%= boss.job %></td>
       <td><%= link_to 'Show', boss_path(boss) %></td>

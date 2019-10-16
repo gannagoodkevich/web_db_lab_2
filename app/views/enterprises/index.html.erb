@@ -15,7 +15,7 @@
 
   <% @enterprises.each do |enterprise| %>
     <tr>
-      <td><%= enterprise.name_ent %></td>
+      <td><%= link_to enterprise.name_ent, enterprise_path(enterprise) %></td>
       <td><%= enterprise.code %></td>
       <td><%= enterprise.address %></td>
       <td><%= enterprise.phone %></td>

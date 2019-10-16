@@ -27,6 +27,10 @@
             </div>
           </div>
           <% end %>
+
+
+
+
 <table class="table table-striped">
   <tr>
     <th>Name</th>
@@ -39,7 +43,7 @@
 
   <% @prodacts.each do |prodact| %>
     <tr>
-      <td><%= prodact.name %></td>
+      <td><%= link_to prodact.name, prodact_path(prodact) %></td>
       <td><%= prodact.number %></td>
       <td><%= prodact.group %></td>
       <td><%= link_to 'Show', prodact_path(prodact) %></td>

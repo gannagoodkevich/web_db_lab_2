@@ -16,7 +16,7 @@ class BossesController < ApplicationController
   end
 
   def create
-    @boss = Boss.new(params.require(:boss).permit(:enterprise_name, :full_name, :job))
+    @boss = Boss.new(params.require(:boss).permit(:enterprise_id, :full_name, :job))
     if @boss.save
       redirect_to @boss
     else
@@ -27,7 +27,7 @@ class BossesController < ApplicationController
   def update
     @boss = Boss.find(params[:id])
 
-    if @boss.update(params.require(:boss).permit(:enterprise_name, :full_name, :job))
+    if @boss.update(params.require(:boss).permit(:enterprise_id, :full_name, :job))
       redirect_to @boss
     else
       render 'edit'

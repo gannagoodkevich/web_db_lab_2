@@ -5,7 +5,9 @@ class CreateEnterprises < ActiveRecord::Migration[6.0]
       t.string :code
       t.string :address
       t.string :phone
-      
+      t.integer :prodact_id
+      t.integer :boss_id
+
       t.timestamps
     end
   end

@@ -4,6 +4,7 @@ class CreateProdacts < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :number
       t.string :group
+      t.integer :enterprise_id
 
       t.timestamps
     end
