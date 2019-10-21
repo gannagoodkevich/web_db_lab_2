@@ -14,8 +14,8 @@
 
   <% @lists.each do |list| %>
     <tr>
-      <td><%= list.prodact.name %></td>
-      <td><%= list.enterprise.name_ent %></td>
+      <td><%= link_to list.prodact.name, prodact_path(list.prodact) %></td>
+      <td><%= link_to list.enterprise.name_ent, enterprise_path(list.enterprise) %></td>
       <td><%= list.price %></td>
       <td><%= link_to 'Show', list_path(list) %></td>
       <td><%= link_to 'Edit', edit_list_path(list) %></td>

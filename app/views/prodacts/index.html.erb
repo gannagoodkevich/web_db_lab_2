@@ -4,33 +4,6 @@
 
 <%= link_to 'Add new', new_prodact_path%>
 
-<h3> Search by name </h3>
-<br>
-  <%= form_tag(search_by_name_prodacts_path_url, :method => "get",
-      class: 'navbar-form navbar-right') do %>
-      <div class="input-group">
-        <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
-        <div class="input-group-btn">
-          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
-        </div>
-      </div>
-      <% end %>
-<br>
-<h3> Search by group </h3>
-<br>
-      <%= form_tag(search_by_group_prodacts_path_url, :method => "get",
-          class: 'navbar-form navbar-left') do %>
-          <div class="input-group">
-            <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
-            <div class="input-group-btn">
-              <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
-            </div>
-          </div>
-          <% end %>
-
-
-
-
 <table class="table table-striped">
   <tr>
     <th>Name</th>

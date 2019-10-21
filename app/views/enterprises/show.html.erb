@@ -24,31 +24,35 @@
 
 <table class="table table-striped">
   <tr>
-    <th>Name</th>
-    <th>Number</th>
-    <th>Group</th>
+    <th>Name of enterprise</th>
+    <th>Data</th>
+    <th>Name of prodact</th>
+    <th>Price</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
-  <% @lists.each do |list| %>
-    <% if list.enterprise.name_ent.eql?(@enterprise.name_ent) %>
+<% @lists = @lists.group_by {|list| list.prodact.group} %>
+<% @lists.each do |list| %>
+<% list = list[1]%>
+  <% list.each do |list1| %>
+    <% if list1.enterprise.name_ent.eql?(@enterprise.name_ent)%>
 
       <tr>
-        <td><%= list.prodact.name %></td>
-        <td><%= list.prodact.number %></td>
-        <td><%= list.prodact.group %></td>
-        <td><%= link_to 'Show', prodact_path(list.prodact) %></td>
-        <td><%= link_to 'Edit', edit_prodact_path(list.prodact) %></td>
-        <td><%= link_to 'Delete', prodact_path(list.prodact),
-                method: :delete,
-                data: {confirm: 'Are you shure?'} %></td>
+        <td><%= @enterprise.name_ent %></td>
+        <td><%= list1.updated_at%>
+        <td><%= list1.prodact.name %></td>
+        <td><%= list1.price %></td>
+        <td><%= link_to 'Show', prodact_path(list1.prodact) %></td>
+        <td><%= link_to 'Edit', edit_prodact_path(list1.prodact) %></td>
+        <td><%= link_to 'Delete', prodact_path(list1.prodact),
+            method: :delete,
+            data: {confirm: 'Are you shure?'} %></td>
 
       </tr>
-    <% end %>
-  <% end %>
-</table>
+    <%end%>
+  <%end%>
+<% end %>
 
 <%= link_to 'Edit', edit_enterprise_path(@enterprise)%> |
 

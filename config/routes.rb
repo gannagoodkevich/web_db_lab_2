@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'enterprises/show'
 
   resources :prodacts, :enterprises
-  resources :lists, :bosses
+  resources :lists, :bosses, :marketologs
 
   root 'welcom#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

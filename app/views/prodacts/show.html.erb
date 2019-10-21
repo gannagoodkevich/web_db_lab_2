@@ -15,10 +15,10 @@
 
 <table class="table table-striped">
   <tr>
-    <th>Name</th>
-    <th>Code</th>
-    <th>Address</th>
-    <th>Phone</th>
+    <th>Name of prodact</th>
+    <th>Data</th>
+    <th>Name of enterprise</th>
+    <th>City</th>
     <th></th>
     <th></th>
     <th></th>
@@ -28,10 +28,10 @@
     <% if list.prodact.name.eql?(@prodact.name) %>
 
       <tr>
+        <td><%= @prodact.name %></td>
+        <td><%= list.updated_at%>
         <td><%= list.enterprise.name_ent %></td>
-        <td><%= list.enterprise.code %></td>
-        <td><%= list.enterprise.address %></td>
-        <td><%= list.enterprise.phone %></td>
+        <td><%= list.enterprise.address.scan(/[A-Z][a-x]*/)[1] %></td>
         <td><%= link_to 'Show', enterprise_path(list.enterprise) %></td>
         <td><%= link_to 'Edit', edit_enterprise_path(list.enterprise) %></td>
         <td><%= link_to 'Delete', enterprise_path(list.enterprise),
