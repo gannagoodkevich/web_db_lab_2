@@ -43,11 +43,6 @@
         <td><%= list1.updated_at%>
         <td><%= list1.prodact.name %></td>
         <td><%= list1.price %></td>
-        <td><%= link_to 'Show', prodact_path(list1.prodact) %></td>
-        <td><%= link_to 'Edit', edit_prodact_path(list1.prodact) %></td>
-        <td><%= link_to 'Delete', prodact_path(list1.prodact),
-            method: :delete,
-            data: {confirm: 'Are you shure?'} %></td>
 
       </tr>
     <%end%>

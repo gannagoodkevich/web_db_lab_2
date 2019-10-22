@@ -38,6 +38,6 @@ class BossesController < ApplicationController
     @boss = Boss.find(params[:id])
     @boss.destroy
 
-    redirect_to bosss_path
+    redirect_to bosses_path
   end
 end

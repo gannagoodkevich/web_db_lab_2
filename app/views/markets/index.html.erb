@@ -1,0 +1,32 @@
+<h1>Information about market department</h1>
+
+<p>
+<a href="markets/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add new</a>
+</p>
+
+<table class="table table-striped">
+  <tr>
+    <th>Enterprise</th>
+    <th>Boss of market department</th>
+    <th>Phone</th>
+    <th>Contact manager</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @markets.each do |market| %>
+    <tr>
+      <td><%= link_to market.enterprise.name_ent, enterprise_path(market.enterprise) %></td>
+      <td><%= market.name_mark %></td>
+      <td><%= market.phone %></td>
+      <td><%= market.name_cont %></td>
+      <td><%= link_to 'Show', market_path(market) %></td>
+      <td><%= link_to 'Edit', edit_market_path(market) %></td>
+      <td><%= link_to 'Delete', market_path(market),
+              method: :delete,
+              data: {confirm: 'Are you shure?'} %></td>
+
+    </tr>
+  <% end %>
+</table>

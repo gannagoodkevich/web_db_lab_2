@@ -1,0 +1,24 @@
+
+<p>
+  <strong>Enterprise:</strong>
+  <%= @market.enterprise.name_ent %>
+</p>
+
+<p>
+  <strong>Boss of market department:</strong>
+  <%= @market.name_mark %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @market.phone %>
+</p>
+
+<p>
+  <strong>Contact manager</strong>
+  <%= @market.name_cont%>
+</p>
+
+<%= link_to 'Edit', edit_market_path(@market)%> |
+
+<%= link_to 'To the market', markets_path%>

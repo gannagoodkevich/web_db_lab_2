@@ -1,0 +1,26 @@
+<h1>Editing markets</h1>
+
+<%= form_with(model: @market, local: true) do |form| %>
+
+<p>
+  <%= form.collection_select( :enterprise_id, Enterprise.all, :id, :name_ent) %>
+</p>
+<p>
+  <%= form.label :name_mark %><br>
+  <%= form.text_field :name_mark %>
+</p>
+<p>
+  <%= form.label :phone %><br>
+  <%= form.text_field :phone %>
+</p>
+<p>
+  <%= form.label :name_cont %><br>
+  <%= form.text_field :name_cont %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+<% end %>
+
+<%= link_to 'Back', lists_path %>

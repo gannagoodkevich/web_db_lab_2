@@ -1,6 +1,8 @@
-<h1>Listing enterprises</h1>
+<h1>Information about enterprises</h1>
 
-<%= link_to 'Add new', new_enterprise_path%>
+<p>
+<a href="enterprises/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add new</a>
+</p>
 
 <table class="table table-striped">
   <tr>
@@ -28,3 +30,7 @@
     </tr>
   <% end %>
 </table>
+
+<p>
+  <%= link_to 'See extended information about enterprises', watch_path_url%>
+</p>

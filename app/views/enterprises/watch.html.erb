@@ -1,0 +1,22 @@
+<h1>Information about enterprises extended</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Enterprise</th>
+    <th>Phone</th>
+    <th>Contact manager</th>
+  </tr>
+
+  <% @enterprises.each do |enterprise| %>
+    <tr>
+      <td><%= enterprise.updated_at %></td>
+      <td><%= link_to enterprise.name_ent, enterprise_path(enterprise) %></td>
+      <td><%= enterprise.market.name_cont %></td>
+      <td><%= enterprise.phone %></td>
+
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', enterprises_path%>

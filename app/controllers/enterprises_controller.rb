@@ -36,6 +36,11 @@ class EnterprisesController < ApplicationController
     end
   end
 
+  def watch
+    @enterprises = Enterprise.all
+    #@markets = Market.all
+  end
+
   def destroy
     @enterprise = Enterprise.find(params[:id])
     @enterprise.destroy
